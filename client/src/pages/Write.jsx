@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const Write = () => {
+  const [value, setValue] = useState('');
+
+  console.log(value)
+
   return (
-    <div>Write</div>
+    <div className='add'>
+      <div className="content"> 
+        <input type="text" placeholder='Title'/>
+        <div className="editorContainer">
+        <ReactQuill theme="snow" value={value} onChange={setValue} />
+        </div>
+        </div>
+
+      <div className="menu">
+          <div className="item">Item 1</div>
+          <div className="item">Item 2</div>
+      </div>
+    </div>
   )
 }
 
